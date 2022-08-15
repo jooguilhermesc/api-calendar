@@ -2,9 +2,36 @@
 
 A presente API supre uma necessidade bem específica para quem precisa trabalhar com datas úteis do calendário da Febraban.
 
+```
 Link: https://apicalendarholidays.herokuapp.com/
+```
 
-Os dados retornados pela API são:
+## Passando parâmetros para a API (atualização - 15/08/2022)
+
+*Agora é possível gerar um calendário de acordo com a necessidade do range de datas, basta passar o intervalo de datas no formato yyyy-mm-aa, como especificado abaixo.*
+
+Se nenhum parâmetro for passado, a API retornará um calendário de datas entre 2010-01-01 e a data atual.
+
+### Exemplo 1 passando as duas datas: 
+
+```
+https://apicalendarholidays.herokuapp.com/?dt_start=2022-01-30&dt_end=2022-03-02
+```
+
+### Exemplo 2 passando a data de início (dt_end padrão = a data atual): 
+
+```
+https://apicalendarholidays.herokuapp.com/?dt_start=2022-01-30
+```
+
+### Exemplo 3 passando a data de fim (dt_start padrão = 2010-01-01): 
+
+```
+https://apicalendarholidays.herokuapp.com/?dt_end=2022-03-02
+```
+
+
+## Dados retornados pela API:
 
 ```
 "Date": Data no formato timezone;
