@@ -15,6 +15,11 @@ class workdays_calendar:
         df = list(holidays["dt_feriado"])
 
         return df
+    
+    def __nmholidays__(self):
+        df = pd.read_csv(self.url,encoding='utf-8')
+        
+        return df
 
     def create_date_table(self):
         df = pd.DataFrame({"Date": pd.date_range(self.start, self.end)})
@@ -25,8 +30,11 @@ class workdays_calendar:
         df["Year"] = df.Date.dt.year
         df["Year_half"] = (df.Quarter + 1) // 2
         
+        nm_feriados = self.__nmholidays__()
         lista_feriados = self.__holidays__()
         df["workday"] = df["Date"].apply(lambda x: 0 if x.strftime('%d/%m') in lista_feriados else 1)
         df["workday"] = df["Day"].apply(lambda x: 0 if x in (0,6) else 1)
+        
+        df["nm_holiday"] = df["Date"].apply(lambda x: nm_feriados["nm_feriado"][nm_feriados.dt_feriado == x.strftime('%d/%m')] if x.strftime('%d/%m') in lista_feriados else "")
             
         return df
