@@ -31,7 +31,7 @@ https://apicalendarholidays.herokuapp.com/?dt_end=2022-03-02
 ```
 
 
-## Dados retornados pela API são:
+## Dados retornados pela API:
 
 ```
 "Date": Data no formato timezone;
