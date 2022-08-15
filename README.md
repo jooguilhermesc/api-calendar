@@ -2,7 +2,9 @@
 
 A presente API supre uma necessidade bem específica para quem precisa trabalhar com datas úteis do calendário da Febraban.
 
-Os dados retornados pela API são simples
+Link: https://apicalendarholidays.herokuapp.com/
+
+Os dados retornados pela API são:
 
 ```
 "Date": Data no formato timezone;
@@ -15,4 +17,4 @@ Os dados retornados pela API são simples
 "workday": Define se é um dia útil (1) ou não (0).
 ```
 
-Essa API foi desenvolvida para ser utilizada no PowerBI, então pode ser consumida tranquilamente como um Web Básico e assim gerar dimensão calendário já com os feriados de maneira descomplicada.
+Essa API foi desenvolvida para ser utilizada no PowerBI, então pode ser consumida tranquilamente como um Web Básico e assim gerar uma dimensão calendário já com os feriados de maneira descomplicada.
